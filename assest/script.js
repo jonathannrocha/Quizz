@@ -11,19 +11,23 @@ const btstartquiz = document.querySelector('.startquis-botton'),
       showresulimg = document.querySelector('.showresult img');
       
 let currentquestion = 0,
+    questionmax = 10,
     correctAnswers = 0,
-    questionmoment = questions[currentquestion];
+    questionmoment =0,
+    list = [];
 
+listnumbers()
+console.log(list)
 
 btstartquiz.addEventListener('click', starquiz)
       
 
 function starquiz() {
-    
-    questionmoment = questions[currentquestion];
+  
+    questionmoment = questions[list[currentquestion]];
     areawelcome.style.display = 'none'
 
-    if(questionmoment) {
+    if( currentquestion < ( questionmax - 1 )  ) {
 
        let percentprogressbar = Math.floor((currentquestion/ questions.length) * 100)
        progrebar.style.width = `${percentprogressbar}%`
@@ -80,7 +84,6 @@ function optionClickEvent(item) {
 
     currentquestion++;
     starquiz();
-    console.log(questionArea.clientWidth)
 
 }
 
@@ -93,7 +96,7 @@ function finishQuiz() {
 
     
 
-    let lengthquest = questions.length,
+    let lengthquest = questionmax,
         resultext = '',
         congratext = '',
         imagepath = '';
@@ -140,4 +143,28 @@ function finishQuiz() {
    
     showresult.style.display = 'block'
     
+}
+function listnumbers() {
+
+    const maxNumbers = questions.length;
+    for (let i = 0; i < maxNumbers; i++) {
+    list[i] = i + 1;
+
+    }
+
+    let randomNumber;
+    let tmp;
+
+
+    for (let i = list.length; i;) {
+
+        randomNumber = Math.random() * i-- | 0;
+        tmp = list[randomNumber];
+        // troca o número aleatório pelo atual
+        list[randomNumber] = list[i];
+        // troca o atual pelo aleatório
+        list[i] = tmp;
+        
+    }
+
 }

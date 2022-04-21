@@ -58,6 +58,99 @@ let questions = [
             'Jardim dos amassos'
         ],
         answer: 3
-    }
+    },
+
+    {
+        question: 'Quantos episódios possuem o naruto clássico?',
+        options: [
+            '200',
+            '201',
+            '210',
+            '220',
+    
+        ],
+        answer: 3
+    },
+
+    {
+        question: 'Quem matou Neji Hyuuga?',
+        options: [
+           'Tobi',
+           'Zetsu',
+           'Madara',
+           'Jubby'    
+        ],
+        answer: 3
+    },
+
+    {
+        question: 'Quem é o Tobi?',
+        options: [
+           'kakishi Hatake',
+           'Óbito uchiha',
+           'Hagoro Ôtsutsuki',
+           'Itachi uchiha',
+         
+        ],
+        answer: 1
+    },
+
+    {
+        question: 'Qual biju Naruto tem selado em seu corpo?',
+        options: [
+           'hachibi',
+           'Son Goku',
+           'Matatabi',
+           'Kurama'
+         
+        ],
+        answer: 3
+    },
+
+    {
+        question: 'Qual uchiha tem o susanoo verde?',
+        options: [
+            'Itachi',
+            'Madara',
+            'Shizui',
+            'Sasuke'
+         
+        ],
+        answer:  2
+    },
+    
+    {
+        question: 'Qual foi a primeira reencarnação de asura e Indra?',
+        options: [
+           'Boruto e kawaki',
+           'Kakashi e obito',
+           'Naruto e sasuke',
+           'hashirama e madara'
+         
+        ],
+        answer: 3
+    },
    
+    {
+        question: 'Por quanto tempo Naruto saiu pra treinar com jiraiya?',
+        options: [
+           '2 anos',
+           '3 anos',
+           '1 mês',
+           '5 dias'
+         
+        ],
+        answer: 1
+    },
+
+    {
+        question: 'Onde foi o primeiro encontro de Naruto e Hinata?',
+        options: [
+          'Churrascaria',
+          'Piquenique',
+          'Lamem do ichiraco'
+         
+        ],
+        answer: 1
+    },
 ];
