@@ -8,7 +8,7 @@
 
 Projeto desenvolvido com o intuito de praticar mais sobre html, css e javascript. 
 
-# ✔️ Técnicas e tecnologias utilizadas
+# ✔️ Tecnologias utilizadas
 
 - ``Html``
 - ``CSS``
