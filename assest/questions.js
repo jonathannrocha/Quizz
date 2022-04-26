@@ -98,6 +98,7 @@ let questions = [
     {
         question: 'Qual biju Naruto tem selado em seu corpo?',
         options: [
+
            'hachibi',
            'Son Goku',
            'Matatabi',
@@ -148,8 +149,8 @@ let questions = [
         options: [
           'Churrascaria',
           'Piquenique',
-          'Lamem do ichiraco'
-         
+          'Lamem do ichiraco',
+          'Pipoca do seu Zé'
         ],
         answer: 1
     },

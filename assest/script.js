@@ -13,21 +13,26 @@ const btstartquiz = document.querySelector('.startquis-botton'),
 let currentquestion = 0,
     questionmax = 10,
     correctAnswers = 0,
-    questionmoment =0,
-    list = [];
+    questionmoment = 0,
+    list = [],
+    listphoto = [],
+    numberquestion =  0;
 
-listnumbers()
-console.log(list)
+
 
 btstartquiz.addEventListener('click', starquiz)
       
+listnumbers()
+
+
 
 function starquiz() {
-  
-    questionmoment = questions[list[currentquestion]];
+    
+    numberquestion = list[currentquestion]
+    questionmoment = questions[numberquestion] 
     areawelcome.style.display = 'none'
 
-    if( currentquestion < ( questionmax - 1 )  ) {
+    if( currentquestion < ( questionmax  )  ) {
 
        let percentprogressbar = Math.floor((currentquestion/ questions.length) * 100)
        progrebar.style.width = `${percentprogressbar}%`
@@ -37,13 +42,14 @@ function starquiz() {
        let optionstextshtml = ''
 
        for(let opquestions in questionmoment.options) {
-        optionstextshtml+= ` <div class="options" data-op="${opquestions}">
-                                <div data-op="${opquestions}" >
-                                    <span data-op="${opquestions}" class="options--number" >${parseInt(opquestions) + 1}</span>
-                                    <span data-op="${opquestions}" class="options--text">${questionmoment.options[opquestions]}</span>
+
+            optionstextshtml+= ` <div class="options" data-op="${opquestions}">
+                                    <div data-op="${opquestions}" >
+                                        <span data-op="${opquestions}" class="options--number" >${parseInt(opquestions) + 1}</span>
+                                        <span data-op="${opquestions}" class="options--text">${questionmoment.options[opquestions]}</span>
+                                    </div>
                                 </div>
-                            </div>
-                            `
+                                `
        }
 
        optiontext.innerHTML = optionstextshtml
@@ -56,14 +62,16 @@ function starquiz() {
             
        }) 
        
-       let photo = Math.floor(Math.random() * 6)
-
-       chagephoto.src = `./assest/images/qzimages-${photo}.jpg`
+       //photo
+    
+       chagephoto.src = `./assest/images/qzimages-${listphoto[currentquestion]}.jpg`
 
        questionArea.style.display = 'block'
        setTimeout(() => {
            questionArea.style.opacity = '100%';
        },100)
+
+      
 
     } else {
      
@@ -144,13 +152,19 @@ function finishQuiz() {
     showresult.style.display = 'block'
     
 }
+
+
+
 function listnumbers() {
 
-    const maxNumbers = questions.length;
+    const maxNumbers = ( questions.length - 1 );
+
     for (let i = 0; i < maxNumbers; i++) {
-    list[i] = i + 1;
+
+        list[i] = i + 1;
 
     }
+
 
     let randomNumber;
     let tmp;
@@ -160,10 +174,36 @@ function listnumbers() {
 
         randomNumber = Math.random() * i-- | 0;
         tmp = list[randomNumber];
-        // troca o número aleatório pelo atual
         list[randomNumber] = list[i];
-        // troca o atual pelo aleatório
         list[i] = tmp;
+        
+    }
+
+}
+
+listnumbersphotos()
+
+function listnumbersphotos() {
+
+    const maxNumbers = (11);
+
+    for (let i = 0; i < maxNumbers; i++) {
+
+        listphoto[i] = i + 1;
+
+    }
+
+
+    let randomNumber;
+    let tmp;
+
+
+    for (let i = listphoto.length; i;) {
+
+        randomNumber = Math.random() * i-- | 0;
+        tmp = listphoto[randomNumber];
+        listphoto[randomNumber] = listphoto[i];
+        listphoto[i] = tmp;
         
     }
 
