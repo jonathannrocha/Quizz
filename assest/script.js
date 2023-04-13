@@ -150,6 +150,10 @@ function finishQuiz() {
 
    
     showresult.style.display = 'block'
+      
+    setTimeout(() => {
+      window.location.reload(true);
+    }, 5 * 1000);
     
 }
 
